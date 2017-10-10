@@ -1,4 +1,4 @@
 # docker-alpine-postgres
 
-This dockerfile is only installing postgres package.
-Don't build any sources which exist in alpine linux repos.
+This dockerfile installs only the postgres package.  
+Not compiling any sources which exist in apline linux 3.6 repos.  
