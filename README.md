@@ -9,7 +9,7 @@ Environment variables
 | variables | example values | description |
 | --------- | ------ | ----------- |
 | POSTGRES_USER  | `hackmd` | DB username(default: `postgres`) |
-| POSTGRES_PASS | `hackmdpass` | DB user's password(default: `postgres`) Cannot set empty password. |
+| POSTGRES_PASSWORD | `hackmdpass` | DB user's password(default: `postgres`) Cannot set empty password. |
 | POSTGRES_DB | `hackmd` | DB name(default: `postgres`) |
 | LISTEN_ADDRESSES | `0.0.0.0/0` | listen addresses(default: `0.0.0.0/0`) |
 
