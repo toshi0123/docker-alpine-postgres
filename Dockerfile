@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk add --no-cache postgresql su-exec
+RUN apk add --no-cache postgresql postgresql-contrib su-exec
 
 ENV LANG en_US.utf8
 
