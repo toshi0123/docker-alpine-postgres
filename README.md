@@ -12,4 +12,4 @@ Environment variables
 | POSTGRES_PASSWORD | `hackmdpass` | DB user's password(default: `postgres`) Cannot set empty password. |
 | POSTGRES_DB | `hackmd` | DB name(default: `postgres`) |
 | LISTEN_ADDRESSES | `0.0.0.0/0` | listen addresses(default: `0.0.0.0/0`) |
-
+| DB_EXTENSION | `pg_trgm` | DB extension(default: ) |
