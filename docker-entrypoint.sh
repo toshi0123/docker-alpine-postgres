@@ -22,6 +22,10 @@ if [ -z "$(ls -A "$PGDATA")" ];then
 	else
 		echo "ALTER USER $POSTGRES_USER WITH SUPERUSER PASSWORD '$POSTGRES_PASSWORD';" | su-exec postgres postgres --single -jE
 	fi
+	
+	if [ "$DB_EXTENSION" == "pg_trgm" ]; then
+		echo "CREATE EXTENSION IF NOT EXISTS pg_trgm;" | su-exec postgres postgres --single -jE $POSTGRES_DB
+	fi
 
 	{ echo; echo "host all all $LISTEN_ADDRESSES md5"; } >> $PGDATA/pg_hba.conf
 fi
