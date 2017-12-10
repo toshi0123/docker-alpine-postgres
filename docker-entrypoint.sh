@@ -1,7 +1,6 @@
 #!/bin/sh
 mkdir -p $PGDATA
 chown -R postgres $PGDATA
-chmod 700 $PGDATA
 
 if [ -z "$(ls -A "$PGDATA")" ];then
 	su-exec postgres initdb
@@ -29,6 +28,8 @@ if [ -z "$(ls -A "$PGDATA")" ];then
 
 	{ echo; echo "host all all $LISTEN_ADDRESSES md5"; } >> $PGDATA/pg_hba.conf
 fi
+
+chmod 700 $PGDATA
 
 mkdir -p /run/postgresql
 chown -R postgres /run/postgresql
