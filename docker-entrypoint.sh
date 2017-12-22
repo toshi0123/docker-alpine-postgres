@@ -25,6 +25,8 @@ if [ -z "$(ls -A "$PGDATA")" ];then
 	if [ "$DB_EXTENSION" == "pg_trgm" ]; then
 		echo "CREATE EXTENSION IF NOT EXISTS pg_trgm;" | su-exec postgres postgres --single -jE $POSTGRES_DB
 	fi
+	
+	echo "CREATE EXTENSION IF NOT EXISTS pgroonga;" | su-exec postgres postgres --single -jE $POSTGRES_DB
 
 	{ echo; echo "host all all $LISTEN_ADDRESSES md5"; } >> $PGDATA/pg_hba.conf
 fi
