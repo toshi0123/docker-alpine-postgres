@@ -1,6 +1,6 @@
 #!/bin/sh
 
-apk add --no-cache --virtual .builddev build-base lz4-dev wget ca-certificates postgresql-dev binutils
+apk add --no-cache --virtual .builddev build-base lz4-dev wget ca-certificates postgresql-dev
 
 # install groonga
 wget https://packages.groonga.org/source/groonga/groonga-7.0.9.tar.gz
@@ -26,3 +26,8 @@ rm -f  groonga-7.0.9.tar.gz pgroonga-2.0.2.tar.gz
 
 # Remove build dependencies
 apk del --no-cache .builddev
+
+# Install for runtime
+RUNDEP=`scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bin | tr ',' '\n' | sort -u | awk 'system("[ -e /lib/" $1 " -o -e /usr/lib/" $1 " -o -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }'`
+
+apk add --no-cache $RUNDEP
