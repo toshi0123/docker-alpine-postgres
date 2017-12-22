@@ -1,6 +1,9 @@
 FROM alpine:edge
 
-RUN apk upgrade --no-cache && apk add --no-cache postgresql postgresql-contrib su-exec
+COPY assets assets/
+
+RUN apk upgrade --no-cache && apk add --no-cache postgresql postgresql-contrib su-exec && \
+    /bin/sh -ex assets/build.sh
 
 ENV LANG en_US.utf8
 
