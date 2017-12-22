@@ -1,6 +1,6 @@
 #!/bin/sh
 
-apk add --no-cache --virtual .builddev build-base lz4-dev wget ca-certificates postgresql-dev
+apk add --no-cache --virtual .builddev build-base lz4-dev wget ca-certificates postgresql-dev binutils
 
 # install groonga
 wget https://packages.groonga.org/source/groonga/groonga-7.0.9.tar.gz
