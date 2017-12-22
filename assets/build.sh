@@ -3,7 +3,7 @@
 apk add --no-cache --virtual .builddev build-base lz4-dev wget ca-certificates postgresql-dev
 
 # install groonga
-wget https://packages.groonga.org/source/groonga/groonga-7.0.9.tar.gz
+wget -q https://packages.groonga.org/source/groonga/groonga-7.0.9.tar.gz
 tar xvzf groonga-7.0.9.tar.gz
 cd groonga-7.0.9
 ./configure --with-lz4
@@ -13,7 +13,7 @@ make install
 cd -
 
 # install pgroonga
-wget https://packages.groonga.org/source/pgroonga/pgroonga-2.0.2.tar.gz
+wget -q https://packages.groonga.org/source/pgroonga/pgroonga-2.0.2.tar.gz
 tar xvf pgroonga-2.0.2.tar.gz
 cd pgroonga-2.0.2
 make -j$(nproc)
