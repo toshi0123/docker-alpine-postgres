@@ -28,6 +28,4 @@ rm -f  groonga-7.0.9.tar.gz pgroonga-2.0.2.tar.gz
 apk del --no-cache .builddev
 
 # Install for runtime
-RUNDEP=`scanelf --needed --nobanner --format '%n#p' --recursive /usr/lib/postgresql/ | tr ',' '\n' | sort -u | awk 'system("[ -e /lib/" $1 " -o -e /usr/lib/" $1 " -o -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }'`
-
-apk add --no-cache $RUNDEP
+apk add --no-cache lz4-libs
