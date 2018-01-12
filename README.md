@@ -3,6 +3,8 @@
 This dockerfile installs only the postgres package.  
 Not compiling any sources which exist in apline linux repos.  
 
+And addtional packages of pgroonga.
+
 Environment variables
 ---
 
