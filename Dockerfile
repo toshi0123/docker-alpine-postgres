@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.8
 
 RUN apk upgrade --no-cache && apk add --no-cache postgresql postgresql-contrib su-exec
 
